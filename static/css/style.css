@@ -295,9 +295,11 @@ body {
 
 .fleet-image {
   width: 100%;
-  height: auto;            /* фото не сжимается */
+  height: 100%;      
+  object-fit: cover;
+  object-position: center 45%;      /* фото не сжимается */
   display: block;
-  margin-top: -40px;       /* сдвиг вверх/вниз чтобы выбрать нужную часть */
+  margin-top: 0;       /* сдвиг вверх/вниз чтобы выбрать нужную часть */
 }
 
 .cargo-image-wrapper {
