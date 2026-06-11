@@ -4,29 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I-TRANS — Таможенные и контейнерные перевозки</title>
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
+<!-- ─── NAVBAR ─── -->
+<nav class="navbar" id="navbar">
   <a href="index.html" class="navbar-logo">
     <img src="static/images/logoNo-text.png" alt="I-TRANS">
   </a>
   <ul class="navbar-nav">
     <li><a href="#company">О компании</a></li>
-    <li><a href="#services">Услуги</a></li>
     <li><a href="#fleet">Автопарк</a></li>
+    <li><a href="#services">Услуги</a></li>
     <li><a href="#about">Преимущества</a></li>
     <li><a href="#careers">Вакансии</a></li>
     <li><a href="#footer">Контакты</a></li>
   </ul>
-  <a href="tel:+79895500404" class="navbar-phone">+7 (989) 550-04-04</a>
+  <a href="tel:+79895500404" class="navbar-phone">
+    <span class="navbar-phone-dot"></span>
+    +7 (989) 550-04-04
+  </a>
 </nav>
 
-<!-- FIXED SIDE CONTACTS -->
+<!-- ─── SIDE CONTACTS ─── -->
 <div class="side-contacts">
   <a href="tel:+79895500404" class="side-contact" title="Телефон">
     <i class="fas fa-phone"></i>
@@ -37,123 +41,206 @@
   <a href="mailto:ggv@итранс.рф" class="side-contact" title="Email">
     <i class="fas fa-envelope"></i>
   </a>
-  <a href="#" class="side-contact" title="Адрес">
+  <a href="#footer" class="side-contact" title="Адрес">
     <i class="fas fa-map-marker-alt"></i>
   </a>
 </div>
 
-<!-- HERO -->
+<!-- ─── HERO ─── -->
 <section class="hero">
   <div class="hero-bg">
     <img src="static/images/perfectHeadImage.png" alt="I-TRANS">
   </div>
   <div class="hero-overlay"></div>
+  <div class="hero-overlay-bottom"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Таможенные и контейнерные перевозки</p>
-    <h1 class="hero-title">Перевозим грузы<br>по всей России</h1>
-    <div style="margin-top: 20px;">
-      <p class="hero-subtitle">✔ Собственный автопарк</p>
-      <p class="hero-subtitle">✔ ВТТ и ГТД</p>
-      <p class="hero-subtitle">✔ Контейнеры 20, 40 и 45 футов.</p>
-    </div>
-    <div style="margin-top: 60px;">
-      <a href="#" class="btn-orange">Получить расчёт →</a>
-      <a href="#careers" class="btn-outline">Стать водителем →</a>
+    <h1 class="hero-title">Перевозим грузы<br><em>по всей России</em></h1>
+    <ul class="hero-checklist">
+      <li>Собственный автопарк — 30 тягачей</li>
+      <li>ВТТ и ГТД, полное таможенное сопровождение</li>
+      <li>Контейнеры 20, 40 и 45 футов</li>
+    </ul>
+    <div class="hero-actions">
+      <a href="#" class="btn-blue">Получить расчёт →</a>
+      <a href="#careers" class="btn-outline">Стать водителем</a>
     </div>
   </div>
+  <a href="#company" class="hero-scroll">
+    <span class="hero-scroll-line"></span>
+    Листать вниз
+  </a>
 </section>
 
-<!-- О КОМПАНИИ -->
+<!-- ─── О КОМПАНИИ ─── -->
 <section class="section section--gray" id="company">
-  <div class="company-story">
-    <p class="section-label">О компании</p>
-    <h2 class="section-title">Более 20 лет перевозим грузы<br>по России</h2>
-    <div class="company-story-content">
-      <p>Компания «И-ТРАНС» работает с <strong>2004 года</strong> и специализируется на автомобильных, контейнерных и таможенных перевозках.</p>
-      <p>За это время мы выстроили собственную систему логистики, сформировали профессиональную команду и накопили опыт работы с грузами различной сложности по всей территории страны.</p>
-      <p>Сегодня компания выполняет перевозки контейнеров <strong>20 и 40 футов</strong>, сопровождает грузы по процедурам <strong>ВТТ и ГТД</strong> и обеспечивает контроль на каждом этапе маршрута.</p>
-      <p>Наш главный принцип остаётся неизменным — ответственность за груз, соблюдение сроков и честные отношения с клиентами и партнёрами.</p>
+  <div class="company-grid">
+
+    <div class="reveal">
+      <p class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        О компании
+      </p>
+      <h2 class="section-title">Более 20 лет<br>перевозим грузы</h2>
+      <div class="company-body">
+        <p>Компания «И-ТРАНС» работает с <strong>2004 года</strong> и специализируется на автомобильных, контейнерных и таможенных перевозках.</p>
+        <p>За это время выстроили собственную систему логистики, сформировали профессиональную команду и накопили опыт работы с грузами любой сложности по всей России.</p>
+        <p>Выполняем перевозки контейнеров <strong>20, 40 и 45 футов</strong>, сопровождаем грузы по процедурам <strong>ВТТ и ГТД</strong> и обеспечиваем контроль на каждом этапе маршрута.</p>
+        <p>Главный принцип — ответственность за груз, соблюдение сроков и честные отношения с клиентами и партнёрами.</p>
+      </div>
     </div>
+
+    <div class="company-aside reveal">
+      <div class="company-aside-item">
+        <div class="company-aside-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div>
+          <div class="company-aside-label">Год основания</div>
+          <div class="company-aside-value" data-counter="2004">2004</div>
+        </div>
+      </div>
+      <div class="company-aside-item">
+        <div class="company-aside-icon"><i class="fas fa-truck"></i></div>
+        <div>
+          <div class="company-aside-label">Тягачей в парке</div>
+          <div class="company-aside-value" data-counter="30">30</div>
+        </div>
+      </div>
+      <div class="company-aside-item">
+        <div class="company-aside-icon"><i class="fas fa-box"></i></div>
+        <div>
+          <div class="company-aside-label">Контейнеровозов</div>
+          <div class="company-aside-value" data-counter="30">30</div>
+        </div>
+      </div>
+      <div class="company-aside-item">
+        <div class="company-aside-icon"><i class="fas fa-headset"></i></div>
+        <div>
+          <div class="company-aside-label">Поддержка клиентов</div>
+          <div class="company-aside-value" data-counter="24/7">24 / 7</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+<!-- ─── ЧТО МЫ ПЕРЕВОЗИМ ─── -->
 
-<!-- АВТОПАРК -->
+<!-- ─── АВТОПАРК ─── -->
 <section class="section section--light" id="fleet">
-  <div class="two-col">
-    <div>
-      <p class="section-label">Собственный автопарк</p>
+  <div class="fleet-grid">
+
+    <div class="fleet-left reveal">
+      <p class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Собственный автопарк
+      </p>
       <h2 class="section-title">Техника, которой<br>можно доверять</h2>
-      <p class="section-text">Современный парк с регулярным ТО. Гарантируем надёжность на каждом маршруте.</p>
-      <a href="#" class="fleet-link">Подробнее об автопарке →</a>
-    </div>
-    <div class="fleet-right-col">
-      <div class="stats-row">
-        <div class="stat-item">
-          <div class="stat-num">30</div>
-          <div class="stat-label">Тягачей</div>
+      <p class="section-text">Современный парк с регулярным техобслуживанием. Все машины на линии — никаких задержек из-за простоя.</p>
+      <div class="fleet-stats">
+        <div class="fleet-stat">
+          <div class="fleet-stat-num" data-counter="30">30</div>
+          <div class="fleet-stat-label">Тягачей</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">30</div>
-          <div class="stat-label">Контейнеровозов</div>
+        <div class="fleet-stat">
+          <div class="fleet-stat-num" data-counter="30">30</div>
+          <div class="fleet-stat-label">Контейнеровозов</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">5+</div>
-          <div class="stat-label">Лет на рынке</div>
+        <div class="fleet-stat">
+          <div class="fleet-stat-num" data-counter="20+">20+</div>
+          <div class="fleet-stat-label">Лет опыта</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">24/7</div>
-          <div class="stat-label">Поддержка</div>
+        <div class="fleet-stat">
+          <div class="fleet-stat-num" data-counter="24/7">24/7</div>
+          <div class="fleet-stat-label">Поддержка</div>
         </div>
       </div>
-      <div class="fleet-image-wrapper">
-        <img src="static/images/fleet.png" alt="Автопарк" class="fleet-image">
-      </div>
+      <a href="#" class="fleet-link">
+        Подробнее об автопарке
+        <span class="fleet-link-arrow">→</span>
+      </a>
     </div>
+    
+    <div class="fleet-image-wrapper reveal">
+      <img src="static/images/fleet.png" alt="Автопарк I-TRANS" class="fleet-image">
+    </div>
+    
   </div>
 </section>
 
-<!-- ЧТО МЫ ПЕРЕВОЗИМ -->
 <section class="section section--gray" id="services">
-  <div class="two-col">
-    <div class="cargo-image-wrapper">
-      <img src="static/images/cargo.png" alt="Грузы" style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div class="services-grid">
+
+    <div class="cargo-image-wrapper reveal">
+      <img src="static/images/cargo.png" alt="Грузы I-TRANS">
     </div>
-    <div>
-      <p class="section-label">Что мы перевозим</p>
-      <h2 class="section-title">Мы перевозим<br>важное</h2>
-      <p class="section-text">Работаем с таможенными грузами и контейнерными перевозками всех форматов. Берёмся за сложные маршруты, обеспечиваем сохранность и соблюдение сроков.</p>
-      <div style="margin-top:28px">
-        <a href="#" style="font-size:13px; font-weight:700; color:var(--orange); text-decoration:none; border-bottom:1px solid var(--orange); padding-bottom:2px;">Подробнее о грузах →</a>
+
+    <div class="reveal">
+      <p class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Что мы перевозим
+      </p>
+      <h2 class="section-title">Берёмся за<br>сложные маршруты</h2>
+      <p class="section-text">Работаем с таможенными грузами и контейнерными перевозками всех форматов. Обеспечиваем сохранность и соблюдение сроков.</p>
+      <div class="services-tags">
+        <span class="services-tag">Таможенные грузы</span>
+        <span class="services-tag">Контейнеры 20 / 40 / 45 фут</span>
+        <span class="services-tag">ВТТ</span>
+        <span class="services-tag">ГТД</span>
+        <span class="services-tag">Сборные грузы</span>
       </div>
+      <a href="#" class="fleet-link">
+        Все виды грузов
+        <span class="fleet-link-arrow">→</span>
+      </a>
     </div>
+
   </div>
 </section>
 
-<!-- ГЕОГРАФИЯ -->
-<section class="section section--light" id="geography">
-  <div class="two-col">
-    <div>
-      <p class="section-label">География перевозок</p>
+<!-- ─── ГЕОГРАФИЯ ─── -->
+<section class="section section--light" id="about">
+  <div class="geo-grid">
+
+    <div class="reveal">
+      <p class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        География перевозок
+      </p>
       <h2 class="section-title">Работаем<br>по всей России</h2>
-      <p class="section-text">Доставляем грузы в любой регион быстро и безопасно.</p>
+      <p class="section-text">Доставляем грузы в любой регион быстро и безопасно. От портов до промышленных центров страны.</p>
       <div class="geo-cities">
-        <span>Москва</span><span>Краснодар</span><span>Екатеринбург</span>
-        <span>Новосибирск</span><span>Владивосток</span>
+        <span class="geo-city"><span class="geo-city-dot"></span> Москва</span>
+        <span class="geo-city"><span class="geo-city-dot"></span> Краснодар</span>
+        <span class="geo-city"><span class="geo-city-dot"></span> Екатеринбург</span>
+        <span class="geo-city"><span class="geo-city-dot"></span> Новосибирск</span>
+        <span class="geo-city"><span class="geo-city-dot"></span> Владивосток</span>
+        <span class="geo-city"><span class="geo-city-dot"></span> Санкт-Петербург</span>
       </div>
-      <a href="#" class="btn-outline" style="margin-top: 32px; display:inline-flex;">Маршруты и направления</a>
+      <a href="#" class="btn-outline">Маршруты и направления</a>
     </div>
-    <div class="geo-map-wrapper">
-      <img src="static/images/map.png" alt="Карта перевозок" class="geo-map-image">
+
+    <div class="geo-map-wrapper reveal">
+      <img src="static/images/map.png" alt="Карта перевозок I-TRANS" class="geo-map-image">
     </div>
+
   </div>
 </section>
 
-<!-- ПОЧЕМУ НАМ ДОВЕРЯЮТ -->
+<!-- ─── ПОЧЕМУ НАМ ДОВЕРЯЮТ ─── -->
 <section class="section section--gray" id="about">
-  <p class="section-label">Почему нам доверяют</p>
-  <h2 class="section-title">Надёжность<br>в каждом этапе</h2>
-  <div class="trust-cards">
-    <div class="trust-card">
+  <div class="trust-intro reveal">
+    <div>
+      <p class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Почему нам доверяют
+      </p>
+      <h2 class="section-title">Надёжность<br>в каждом этапе</h2>
+    </div>
+    <p class="trust-intro-desc">Собственная техника, опытные водители и прямая работа без посредников — вот почему клиенты возвращаются.</p>
+  </div>
+
+  <div class="trust-cards" data-stagger>
+    <div class="trust-card reveal">
       <div class="trust-card-img">
         <img src="static/images/fleet.jpg" alt="Автопарк">
       </div>
@@ -162,64 +249,82 @@
         <div class="trust-card-text">Контроль качества и сроков на всех этапах перевозки.</div>
       </div>
     </div>
-    <div class="trust-card">
+    <div class="trust-card reveal">
       <div class="trust-card-img">
         <img src="static/images/redTruckLoading.jpg" alt="Без посредников">
       </div>
       <div class="trust-card-body">
-        <div class="trust-card-title">Работаем без посредников</div>
+        <div class="trust-card-title">Без посредников</div>
         <div class="trust-card-text">Прямой контроль и честные условия для клиентов.</div>
       </div>
     </div>
-    <div class="trust-card">
+    <div class="trust-card reveal">
       <div class="trust-card-img">
-        <img src="static/images/trust3.jpg" alt="Водители">
+        <img src="static/images/redTruck.jpg" alt="Водители">
       </div>
       <div class="trust-card-body">
         <div class="trust-card-title">Опытные водители</div>
-        <div class="trust-card-text">Профессионалы с большим стажем и опытом.</div>
+        <div class="trust-card-text">Профессионалы с большим стажем и знанием маршрутов.</div>
       </div>
     </div>
-    <div class="trust-card">
+    <div class="trust-card reveal">
       <div class="trust-card-img">
         <img src="static/images/whiteTruckwith1-40.jpg" alt="Контейнеры">
       </div>
       <div class="trust-card-body">
-        <div class="trust-card-title">Всегда готовое авто под загрузку</div>
-        <div class="trust-card-text">30 тягачей на линии. Нужна машина сегодня — она уже ждёт.</div>
+        <div class="trust-card-title">Машина ждёт сегодня</div>
+        <div class="trust-card-text">30 тягачей на линии. Нужна машина сегодня — она уже готова.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ВАКАНСИИ -->
+<!-- ─── ВАКАНСИИ ─── -->
+<!-- ─── ВАКАНСИИ ─── -->
 <section class="section section--dark" id="careers">
-  <div class="two-col">
-    <div class="img-ph" style="height:520px;">
-      <img src="static/images/driver.jpg" alt="Водитель" style="width:100%;height:100%;object-fit:cover;display:block;"
-           onerror="this.style.display='none'">
-    </div>
-    <div>
-      <p class="section-label">Присоединяйтесь</p>
-      <h2 class="section-title">Ищем честных<br>водителей категории Е</h2>
-      <p class="section-text">Подбираем опытных и ответственных водителей. Предлагаем стабильную работу.</p>
+  <div class="careers-grid">
+
+    <!-- LEFT -->
+    <div class="reveal">
+      <p class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Вакансии
+      </p>
+
+      <h2 class="section-title">
+        Приглашаем водителей<br>категории C, E
+      </h2>
+
+      <p class="section-text">
+        Работа в стабильной транспортной компании с собственным автопарком и постоянными маршрутами по России.
+      </p>
+
       <ul class="checklist">
-        <li>Постоянные рейсы</li>
-        <li>Собственный автопарк</li>
-        <li>Своевременная заработная плата</li>
-        <li>Стабильный доход и уважение к каждому</li>
-        <li>Дружный коллектив</li>
+        <li>Достойная заработная плата</li>
+        <li>Официальное трудоустройство</li>
+        <li>Собственное СТО и техподдержка</li>
+        <li>Автопарк MAN</li>
+        <li>Маршруты по всей России</li>
       </ul>
-      <a href="https://wa.me/79895500404" class="btn-orange">Откликнуться в WhatsApp →</a>
+
+      <div class="career-contacts">
+        <a href="tel:+79895500404">Позвонить</a>
+        <a href="https://wa.me/79895500404" target="_blank">WhatsApp</a>
+      </div>
     </div>
+
+    <!-- RIGHT (ФОТО) -->
+    <div class="career-image reveal">
+      <img src="static/images/whiteTruck.jpg" alt="Водители I-TRANS">
+    </div>
+
   </div>
 </section>
-
-<!-- FOOTER -->
+<!-- ─── FOOTER ─── -->
 <footer id="footer">
-  <div>
+  <div class="footer-brand">
     <div class="footer-logo">I<span>-</span>TRANS</div>
-    <div class="footer-desc">Таможенные и контейнерные перевозки по всей России. Собственный автопарк.</div>
+    <div class="footer-desc">Таможенные и контейнерные перевозки по всей России. Собственный автопарк с 2004 года.</div>
   </div>
   <div>
     <div class="footer-col-title">Навигация</div>
@@ -242,13 +347,21 @@
   </div>
   <div>
     <div class="footer-col-title">Контакты</div>
-    <div class="footer-contact"><strong>+7 (989) 550-04-04</strong>WhatsApp</div>
-    <div class="footer-contact"><strong>ggv@итранс.рф</strong>Электронная почта</div>
-    <div class="footer-contact">г. Большой лог, ул. Советская 77</div>
+    <div class="footer-contact">
+      <strong>+7 (989) 550-04-04</strong>
+      WhatsApp · Звонки
+    </div>
+    <div class="footer-contact">
+      <strong>ggv@итранс.рф</strong>
+      Электронная почта
+    </div>
+    <div class="footer-contact">
+      г. Большой Лог, ул. Советская 77
+    </div>
   </div>
 </footer>
 <div class="footer-bottom">
-  <span>© 2026 ООО "И-ТРАНС". Все права защищены.</span>
+  <span>© 2026 ООО «И-ТРАНС». Все права защищены.</span>
   <a href="#">Политика конфиденциальности</a>
 </div>
 
