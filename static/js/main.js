@@ -143,5 +143,9 @@ const eyebroObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.2 });
-
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.getElementById('messengerModal')?.classList.remove('open');
+  }
+});
 document.querySelectorAll('.section-eyebrow').forEach(el => eyebroObserver.observe(el));

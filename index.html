@@ -362,10 +362,10 @@
         <li>Маршруты по всей России</li>
       </ul>
 
-      <div class="career-contacts">
-        <a href="tel:+79895500404">Позвонить</a>
-        <a href="https://wa.me/79895500404" target="_blank">WhatsApp</a>
-      </div>
+    <div class="career-contacts">
+      <a href="tel:+79895500404">Позвонить</a>
+      <a href="#" onclick="event.preventDefault(); document.getElementById('messengerModal').classList.add('open');">Написать</a>
+    </div>
     </div>
 
     <!-- desktop image -->
@@ -428,11 +428,43 @@
     Позвонить
   </a>
   <a href="https://wa.me/79895500404" class="mobile-bottom-wa" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    WhatsApp
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="MAX" style="width: 20px; height: 20px; object-fit: contain;">
+  </a>
+  <a href="https://max.ru/+79895500404" class="mobile-bottom-wa" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_MAX.svg/250px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_MAX.svg.png" alt="MAX" style="width: 20px; height: 20px; object-fit: contain;">
+  </a>
+  <a href="https://t.me/+79895500404" class="mobile-bottom-wa" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="MAX" style="width: 20px; height: 20px; object-fit: contain;">
   </a>
 </div>
 
 <script src="static/js/main.js"></script>
+
+
+<!-- ─── MESSENGER MODAL ─── -->
+<div id="messengerModal" class="messenger-modal">
+  <div class="messenger-modal-overlay" onclick="document.getElementById('messengerModal').classList.remove('open')"></div>
+  <div class="messenger-modal-box">
+    <p class="messenger-modal-title">Выберите мессенджер</p>
+    <div class="messenger-modal-links">
+      <a href="https://wa.me/79895500404" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:48px;height:48px;">
+        WhatsApp
+      </a>
+      <a href="https://max.ru/+79895500404" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_MAX.svg/250px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_MAX.svg.png" style="width:48px;height:48px;object-fit:contain;">
+        MAX
+      </a>
+      <a href="https://t.me/+79895500404" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" style="width:48px;height:48px;">
+        Telegram
+      </a>
+    </div>
+    <button onclick="document.getElementById('messengerModal').classList.remove('open')">Закрыть</button>
+  </div>
+</div>
+
+
+
 </body>
 </html>
