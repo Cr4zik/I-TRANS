@@ -807,7 +807,7 @@ body {
 
 .hero-scroll {
   position: absolute;
-  bottom: 80px;
+  bottom: 32px;
   left: 48px;
   z-index: 2;
   display: flex;
