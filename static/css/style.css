@@ -1738,7 +1738,7 @@ footer {
 
   .hero-scroll {
     left: 20px;
-    bottom: 150px;
+    bottom: 32px;
   }
 
   .company-grid,
@@ -1936,6 +1936,9 @@ footer {
    RESPONSIVE — SMALL MOBILE (≤520px)
    ═══════════════════════════════════════════ */
 @media (max-width: 520px) {
+  .hero {
+    min-height: 70vh;
+  }
   :root {
     --section-pad: 44px 16px;
   }
