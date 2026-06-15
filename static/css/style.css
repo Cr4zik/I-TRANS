@@ -1894,7 +1894,7 @@ footer {
 
   .hero-scroll {
     left: 20px;
-    bottom: 32px;
+    bottom: 0px;
   }
 
   .company-grid,
@@ -2161,7 +2161,7 @@ footer {
   }
 
   .hero-actions {
-    margin-top: 25%;
+    margin-top: 5%;
   }
 
   .section-title {
@@ -2216,7 +2216,7 @@ footer {
   }
 
   .hero-actions {
-    margin-top: 25%;
+    margin-top: 5%;
   }
 
   .hero-checklist {
