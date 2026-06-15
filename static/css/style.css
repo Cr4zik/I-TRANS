@@ -171,7 +171,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--dark);
   text-decoration: none;
@@ -365,7 +365,7 @@ body {
 .mobile-nav-phone {
   display: block;
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 14px;
   color: #fff;
   text-decoration: none;
   margin-bottom: 5px;
@@ -807,7 +807,7 @@ body {
 
 .hero-scroll {
   position: absolute;
-  bottom: 32px;
+  bottom: 80px;
   left: 48px;
   z-index: 2;
   display: flex;
@@ -1675,7 +1675,7 @@ footer {
   }
 
   .navbar-phone {
-    font-size: 15px;
+    font-size: 14px;
     gap: 6px;
   }
 
@@ -1738,7 +1738,7 @@ footer {
 
   .hero-scroll {
     left: 20px;
-    bottom: 100px;
+    bottom: 150px;
   }
 
   .company-grid,
@@ -1949,7 +1949,7 @@ footer {
   }
 
   .navbar-phone {
-    font-size: 11px;
+    font-size: 14px;
     gap: 6px;
   }
 
@@ -1970,7 +1970,7 @@ footer {
 
   .hero-actions .btn-blue,
   .hero-actions .btn-outline {
-    width: 220px;
+    width: 200px;
   }
 
   .company-aside-value {
@@ -2000,7 +2000,7 @@ footer {
     max-width: 100%;
   }
 }
-
+  .hero-actions{margin-top: 25%;}
   .section-title {
     font-size: clamp(24px, 6.5vw, 34px);
   }
@@ -2045,14 +2045,19 @@ footer {
   .hero-title {
     font-size: 28px;
   }
-
+  
+  .hero-actions .btn-blue,
+  .hero-actions .btn-outline {
+    width: 160px;
+  }
+  .hero-actions{margin-top: 25%;}
   .hero-checklist {
     gap: 4px;
   }
 
   .hero-checklist li {
-    font-size: 12px;
-    gap: 8px;
+    font-size: 12.5px;
+    max-width: 200px;
   }
 
   .mobile-bottom-bar a {
