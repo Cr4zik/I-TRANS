@@ -28,7 +28,33 @@
     <span class="navbar-phone-dot"></span>
     +7 (989) 550-04-04
   </a>
+  <!-- ─── HAMBURGER ─── -->
+  <button class="navbar-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- ─── MOBILE NAV DRAWER ─── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav-panel">
+    <ul class="mobile-nav-links">
+      <li><a href="#company">О компании</a></li>
+      <li><a href="#fleet">Автопарк</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#about">Преимущества</a></li>
+      <li><a href="#careers">Вакансии</a></li>
+      <li><a href="#footer">Контакты</a></li>
+    </ul>
+    <div class="mobile-nav-bottom">
+      <a href="tel:+79895500404" class="mobile-nav-phone">+7 (989) 550-04-04</a>
+      <a href="mailto:ggv@итранс.рф" class="mobile-nav-email">ggv@итранс.рф</a>
+      <a href="#" class="mobile-nav-cta">Получить расчёт →</a>
+    </div>
+  </div>
+</div>
 
 <!-- ─── SIDE CONTACTS ─── -->
 <div class="side-contacts">
@@ -123,7 +149,6 @@
 
   </div>
 </section>
-<!-- ─── ЧТО МЫ ПЕРЕВОЗИМ ─── -->
 
 <!-- ─── АВТОПАРК ─── -->
 <section class="section section--light" id="fleet">
@@ -134,8 +159,18 @@
         <span class="section-eyebrow-line"></span>
         Собственный автопарк
       </p>
+
       <h2 class="section-title">Техника, которой<br>можно доверять</h2>
-      <p class="section-text">Современный парк с регулярным техобслуживанием. Все машины на линии — никаких задержек из-за простоя.</p>
+
+      <p class="section-text">
+        Современный парк с регулярным техобслуживанием. Все машины на линии — никаких задержек из-за простоя.
+      </p>
+
+      <!-- mobile image -->
+      <div class="fleet-image-wrapper fleet-image-wrapper--mobile reveal">
+        <img src="static/images/fleet.png" alt="Автопарк I-TRANS" class="fleet-image">
+      </div>
+
       <div class="fleet-stats">
         <div class="fleet-stat">
           <div class="fleet-stat-num" data-counter="30">30</div>
@@ -154,25 +189,28 @@
           <div class="fleet-stat-label">Поддержка</div>
         </div>
       </div>
+
       <a href="#" class="fleet-link">
         Подробнее об автопарке
         <span class="fleet-link-arrow">→</span>
       </a>
     </div>
-    
-    <div class="fleet-image-wrapper reveal">
+
+    <!-- desktop image -->
+    <div class="fleet-image-wrapper fleet-image-wrapper--desktop reveal">
       <img src="static/images/fleet.png" alt="Автопарк I-TRANS" class="fleet-image">
     </div>
-    
+
   </div>
 </section>
 
+<!-- ─── ЧТО МЫ ПЕРЕВОЗИМ ─── -->
 <section class="section section--gray" id="services">
   <div class="services-grid">
 
-    <div class="cargo-image-wrapper reveal">
-      <img src="static/images/cargo.png" alt="Грузы I-TRANS">
-    </div>
+      <div class="cargo-image-wrapper cargo-image-wrapper--desktop reveal">
+        <img src="static/images/cargo.png" alt="Грузы I-TRANS">
+      </div>
 
     <div class="reveal">
       <p class="section-eyebrow">
@@ -181,6 +219,9 @@
       </p>
       <h2 class="section-title">Берёмся за<br>сложные маршруты</h2>
       <p class="section-text">Работаем с таможенными грузами и контейнерными перевозками всех форматов. Обеспечиваем сохранность и соблюдение сроков.</p>
+      <div class="cargo-image-wrapper cargo-image-wrapper--mobile reveal">
+        <img src="static/images/cargo.png" alt="Грузы I-TRANS">
+      </div>
       <div class="services-tags">
         <span class="services-tag">Таможенные грузы</span>
         <span class="services-tag">Контейнеры 20 / 40 / 45 фут</span>
@@ -208,6 +249,13 @@
       </p>
       <h2 class="section-title">Работаем<br>по всей России</h2>
       <p class="section-text">Доставляем грузы в любой регион быстро и безопасно. От портов до промышленных центров страны.</p>
+      <div class="geo-map-wrapper geo-map-wrapper--mobile reveal">
+        <img
+          src="static/images/map.png"
+          alt="География перевозок"
+          class="geo-map-image"
+        >
+      </div>
       <div class="geo-cities">
         <span class="geo-city"><span class="geo-city-dot"></span> Москва</span>
         <span class="geo-city"><span class="geo-city-dot"></span> Краснодар</span>
@@ -219,8 +267,12 @@
       <a href="#" class="btn-outline">Маршруты и направления</a>
     </div>
 
-    <div class="geo-map-wrapper reveal">
-      <img src="static/images/map.png" alt="Карта перевозок I-TRANS" class="geo-map-image">
+    <div class="geo-map-wrapper geo-map-wrapper--desktop reveal">
+      <img
+        src="static/images/map.png"
+        alt="География перевозок"
+        class="geo-map-image"
+      >
     </div>
 
   </div>
@@ -279,12 +331,10 @@
   </div>
 </section>
 
-<!-- ─── ВАКАНСИИ ─── -->
-<!-- ─── ВАКАНСИИ ─── -->
+
 <section class="section section--dark" id="careers">
   <div class="careers-grid">
 
-    <!-- LEFT -->
     <div class="reveal">
       <p class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
@@ -298,6 +348,11 @@
       <p class="section-text">
         Работа в стабильной транспортной компании с собственным автопарком и постоянными маршрутами по России.
       </p>
+
+      <!-- mobile image -->
+      <div class="career-image career-image--mobile reveal">
+        <img src="static/images/whiteTruck.jpg" alt="Водители I-TRANS">
+      </div>
 
       <ul class="checklist">
         <li>Достойная заработная плата</li>
@@ -313,13 +368,14 @@
       </div>
     </div>
 
-    <!-- RIGHT (ФОТО) -->
-    <div class="career-image reveal">
+    <!-- desktop image -->
+    <div class="career-image career-image--desktop reveal">
       <img src="static/images/whiteTruck.jpg" alt="Водители I-TRANS">
     </div>
 
   </div>
 </section>
+
 <!-- ─── FOOTER ─── -->
 <footer id="footer">
   <div class="footer-brand">
@@ -363,6 +419,18 @@
 <div class="footer-bottom">
   <span>© 2026 ООО «И-ТРАНС». Все права защищены.</span>
   <a href="#">Политика конфиденциальности</a>
+</div>
+
+<!-- ─── MOBILE BOTTOM BAR ─── -->
+<div class="mobile-bottom-bar">
+  <a href="tel:+79895500404" class="mobile-bottom-phone">
+    <i class="fas fa-phone"></i>
+    Позвонить
+  </a>
+  <a href="https://wa.me/79895500404" class="mobile-bottom-wa" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    WhatsApp
+  </a>
 </div>
 
 <script src="static/js/main.js"></script>

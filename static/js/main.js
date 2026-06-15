@@ -1,135 +1,147 @@
 /* ═══════════════════════════════════════════
    I-TRANS — main.js
+   Hamburger menu · Scroll reveal · Counters · Active nav · Side contacts
    ═══════════════════════════════════════════ */
 
-// ── Init ──
-document.body.classList.add('js-loaded');
+document.documentElement.classList.add('js-loaded');
 
-// ── Navbar scroll ──
+/* ─── NAVBAR SCROLL ─── */
 const navbar = document.getElementById('navbar');
+
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
-// ── Smooth scroll (with offset for fixed navbar) ──
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const id = link.getAttribute('href');
-    if (id === '#') return;
-    const target = document.querySelector(id);
-    if (target) {
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({ top, behavior: 'smooth' });
+/* ─── HAMBURGER MENU ─── */
+const navToggle   = document.getElementById('navToggle');
+const mobileNav   = document.getElementById('mobileNav');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobileNavLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+
+function openMenu() {
+  navToggle.classList.add('open');
+  navToggle.setAttribute('aria-expanded', 'true');
+  mobileNav.classList.add('open');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+}
+
+if (mobileOverlay) {
+  mobileOverlay.addEventListener('click', closeMenu);
+}
+
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) {
+    closeMenu();
+    navToggle && navToggle.focus();
+  }
+});
+
+/* ─── SIDE CONTACTS: appear after scrolling ─── */
+const sideContacts = document.querySelectorAll('.side-contact');
+
+window.addEventListener('scroll', () => {
+  const visible = window.scrollY > 240;
+  sideContacts.forEach((el, i) => {
+    el.style.transitionDelay = visible ? `${i * 55}ms` : '0ms';
+    el.classList.toggle('visible', visible);
+  });
+}, { passive: true });
+
+/* ─── SCROLL REVEAL ─── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
   });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -40px 0px'
 });
 
-// ── Active nav link ──
-const sections = document.querySelectorAll('section[id], footer[id]');
-const navLinks  = document.querySelectorAll('.navbar-nav a');
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-function updateActiveNav() {
-  const y = window.scrollY + 90;
-  let current = '';
-  sections.forEach(s => {
-    if (y >= s.offsetTop) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
-  });
-}
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-updateActiveNav();
-
-// ── Side contacts entrance (staggered) ──
-const sideContacts = document.querySelectorAll('.side-contact');
-sideContacts.forEach((el, i) => {
-  setTimeout(() => el.classList.add('visible'), 900 + i * 110);
+/* ─── STAGGERED REVEAL (trust cards) ─── */
+document.querySelectorAll('[data-stagger] .reveal').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 90}ms`;
 });
 
-// ── Counter animation ──
-function easeOutCubic(t) {
-  return 1 - Math.pow(1 - t, 3);
-}
-
-function animateCounter(el) {
-  if (el._animated) return;
-  el._animated = true;
-
-  const raw = el.dataset.counter;
-  if (!raw) return;
-
-  // Non-numeric (e.g. "24/7")
-  if (!/^\d/.test(raw)) {
-    el.textContent = raw;
-    el.style.animation = 'fadeUp 0.5s cubic-bezier(0.16,1,0.3,1) both';
-    return;
-  }
-
-  const match = raw.match(/^(\d+)(.*)$/);
-  if (!match) { el.textContent = raw; return; }
-
-  const target   = parseInt(match[1], 10);
-  const suffix   = match[2] || '';
-  const duration = Math.min(1000 + target * 3, 1800);
-  const startTs  = performance.now();
-
-  el.textContent = '0' + suffix;
-
-  function step(now) {
-    const elapsed  = now - startTs;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased    = easeOutCubic(progress);
-    el.textContent = Math.round(eased * target) + suffix;
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-// ── Scroll reveal with stagger support ──
-const reveals = document.querySelectorAll('.reveal');
-
-const revealObserver = new IntersectionObserver((entries) => {
+/* ─── ANIMATED COUNTERS ─── */
+const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
-    const el = entry.target;
+    const el     = entry.target;
+    const raw    = el.dataset.counter;
+    const target = parseInt(raw, 10);
 
-    // Apply stagger delay based on sibling position
-    const parent = el.parentElement;
-    if (parent && parent.hasAttribute('data-stagger')) {
-      const siblings = [...parent.querySelectorAll(':scope > .reveal')];
-      const idx = siblings.indexOf(el);
-      el.style.transitionDelay = `${idx * 80}ms`;
-    }
+    // Skip non-numeric counters (24/7, 20+)
+    if (isNaN(target)) return;
 
-    el.classList.add('visible');
+    let current  = 0;
+    const step   = Math.max(1, Math.ceil(target / 44));
+    const isYear = target > 100; // e.g. 2004
 
-    // Animate any inline counters inside this element
-    el.querySelectorAll('[data-counter]').forEach(animateCounter);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = current;
+      if (current >= target) clearInterval(timer);
+    }, 28);
 
-    // Animate eyebrow lines
-    el.querySelectorAll('.section-eyebrow-line').forEach(line => {
-      line.classList.add('animate');
-    });
-
-    revealObserver.unobserve(el);
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
-
-reveals.forEach(el => revealObserver.observe(el));
-
-// ── Counters outside .reveal (direct observers) ──
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      counterObserver.unobserve(entry.target);
-    }
+    counterObserver.unobserve(el);
   });
 }, { threshold: 0.6 });
 
 document.querySelectorAll('[data-counter]').forEach(el => {
-  if (!el.closest('.reveal')) counterObserver.observe(el);
+  counterObserver.observe(el);
 });
+
+/* ─── ACTIVE NAV LINK ─── */
+const sections = Array.from(document.querySelectorAll('section[id]'));
+const navLinks = document.querySelectorAll('.navbar-nav a[href^="#"]');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === `#${entry.target.id}`);
+    });
+  });
+}, { rootMargin: '-48% 0px -48% 0px', threshold: 0 });
+
+sections.forEach(s => sectionObserver.observe(s));
+
+/* ─── SECTION EYEBROW LINES: trigger when section enters view ─── */
+const eyebroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const line = entry.target.querySelector('.section-eyebrow-line');
+      if (line) line.classList.add('animate');
+      eyebroObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.section-eyebrow').forEach(el => eyebroObserver.observe(el));
