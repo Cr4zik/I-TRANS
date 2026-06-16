@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="static/css/style.css">
 <link rel="icon" type="image/png" href="favicon.png">
+
+
 </head>
 <body>
 
@@ -380,7 +382,7 @@
 <!-- ─── FOOTER ─── -->
 <footer id="footer">
   <div class="footer-brand">
-    <div class="footer-logo">I<span>-</span>TRANS</div>
+    <div class="footer-logo"><img src="static/images/logoOnlyTxt.png" alt="I-TRANS"></div>
     <div class="footer-desc">Таможенные и контейнерные перевозки по всей России. Собственный автопарк с 2004 года.</div>
   </div>
   <div>
@@ -417,9 +419,14 @@
     </div>
   </div>
 </footer>
+
+<!-- ─── FOOTER BOTTOM (с ссылкой на соглашение) ─── -->
 <div class="footer-bottom">
   <span>© 2026 ООО «И-ТРАНС». Все права защищены.</span>
-  <a href="#">Политика конфиденциальности</a>
+  <div class="footer-bottom-links">
+
+    <a href="#" onclick="event.preventDefault(); document.getElementById('tosModal').classList.add('open');">Пользовательское соглашение</a>
+  </div>
 </div>
 
 <!-- ─── MOBILE BOTTOM BAR ─── -->
@@ -465,6 +472,95 @@
   </div>
 </div>
 
+
+<!-- ─── MODAL: ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ ─── -->
+<div id="tosModal" class="tos-modal">
+  <div class="tos-modal-overlay" onclick="document.getElementById('tosModal').classList.remove('open')"></div>
+  <div class="tos-modal-box">
+    <div class="tos-modal-header">
+      <div>
+        <div class="tos-modal-eyebrow">ООО «И-ТРАНС»</div>
+        <h2 class="tos-modal-title">Пользовательское соглашение</h2>
+        <div class="tos-modal-date">Дата публикации: 16 июня 2026 г.</div>
+      </div>
+      <button class="tos-modal-close" onclick="document.getElementById('tosModal').classList.remove('open')" aria-label="Закрыть">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="tos-modal-body">
+
+      <div class="tos-section">
+        <h3 class="tos-section-title">1. Общие положения</h3>
+        <p>1.1. Настоящее Пользовательское соглашение (далее — «Соглашение») регулирует отношения между Обществом с ограниченной ответственностью «И-ТРАНС» (далее — «Администрация») и любым физическим лицом, посещающим веб-сайт Администрации (далее — «Пользователь»).</p>
+        <p>1.2. Сайт является одностраничным информационно-рекламным ресурсом. Сайт создан исключительно в целях демонстрации презентационных материалов, фотографий техники (грузовиков) и информирования о деятельности Администрации. На Сайте полностью отсутствуют функции регистрации Пользователей, создания личных кабинетов, формы обратной связи для сбора данных или оформления онлайн-покупок.</p>
+        <p>1.3. Использование Сайта (включая простой просмотр страниц, изображений и текстовых материалов) означает полное и безоговорочное согласие Пользователя с настоящим Соглашением. Если Пользователь не согласен с какими-либо условиями, он обязан немедленно прекратить использование Сайта и покинуть его.</p>
+      </div>
+
+      <div class="tos-section">
+        <h3 class="tos-section-title">2. Права на интеллектуальную собственность</h3>
+        <p>2.1. Весь контент, размещенный на Сайте (включая, но не ограничиваясь: тексты, графические элементы, товарные знаки, логотипы, а также фотографии грузовых автомобилей и спецтехники), является объектом исключительных прав Администрации или используется ею на законных основаниях.</p>
+        <p>2.2. Любое копирование, скачивание, воспроизведение, распространение или использование материалов Сайта в коммерческих целях без предварительного письменного согласия Администрации строго запрещено.</p>
+        <p>2.3. Пользователь имеет право просматривать материалы Сайта исключительно для личного некоммерческого ознакомления.</p>
+      </div>
+
+      <div class="tos-section">
+        <h3 class="tos-section-title">3. Ограничение ответственности</h3>
+        <p>3.1. Информация и фотоматериалы на Сайте носят исключительно ознакомительный и рекламный характер. Информация не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ. Конкретные условия сотрудничества, цены и характеристики услуг уточняются индивидуально при прямой связи с Администрацией через указанные контакты.</p>
+        <p>3.2. Администрация прилагает все усилия для обеспечения корректной работы Сайта, но не гарантирует его постоянную непрерывную доступность. Сайт предоставляется по принципу «как есть» (as is).</p>
+        <p>3.3. Администрация не несет ответственности за технические сбои, перебои в работе сети Интернет, а также за любые убытки (прямые или косвенные), возникшие у Пользователя в связи с использованием или невозможностью использования материалов Сайта.</p>
+      </div>
+
+      <div class="tos-section">
+        <h3 class="tos-section-title">4. Правила поведения на сайте</h3>
+        <p>4.1. Пользователю запрещается предпринимать любые действия, направленные на нарушение нормальной работы Сайта (включая использование автоматических скриптов, ботов для парсинга данных, проведение DDOS-атак или внедрение вредоносного программного кода).</p>
+      </div>
+
+      <div class="tos-section">
+        <h3 class="tos-section-title">5. Заключительные положения</h3>
+        <p>5.1. Администрация оставляет за собой право в одностороннем порядке изменять условия настоящего Соглашения без предварительного уведомления Пользователей. Новая редакция вступает в силу с момента ее публикации на этой странице.</p>
+        <p>5.2. К настоящему Соглашению и отношениям между Пользователем и Администрацией применяется действующее законодательство Российской Федерации.</p>
+      </div>
+
+      <div class="tos-requisites">
+        <div class="tos-requisites-title">Реквизиты Администрации</div>
+        <div class="tos-requisites-grid">
+          <div class="tos-req-item">
+            <span class="tos-req-label">Наименование</span>
+            <span class="tos-req-value">ООО «И-ТРАНС»</span>
+          </div>
+          <div class="tos-req-item">
+            <span class="tos-req-label">ИНН</span>
+            <span class="tos-req-value">6102018914</span>
+          </div>
+          <div class="tos-req-item">
+            <span class="tos-req-label">ОГРН</span>
+            <span class="tos-req-value">1046102002341 от 28 мая 2004 г.</span>
+          </div>
+          <div class="tos-req-item">
+            <span class="tos-req-label">Юридический адрес</span>
+            <span class="tos-req-value">346710, Ростовская область, Аксайский район, х. Большой Лог, ул. Советская, д. 77</span>
+          </div>
+          <div class="tos-req-item">
+            <span class="tos-req-label">Email</span>
+            <span class="tos-req-value"><a href="mailto:ggv@итранс.рф">ggv@итранс.рф</a></span>
+          </div>
+          <div class="tos-req-item">
+            <span class="tos-req-label">Телефон</span>
+            <span class="tos-req-value"><a href="tel:+79895500404">+7 (989) 550-04-04</a></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tos-modal-footer">
+      <button class="tos-modal-accept" onclick="document.getElementById('tosModal').classList.remove('open')">Понятно</button>
+    </div>
+  </div>
+</div>
 
 
 </body>
